@@ -264,10 +264,10 @@ Now we make a panel plot containing of the 5-minute interval (x-axis) and the av
 
 ```r
 avg.steps.per.int2<-ddply(data2,.(interval,day),summarize,mean=mean(steps))
-
+names(avg.steps.per.int2)<-c("Interval","Day","Number.of.steps")
 library(ggplot2)
 
-qplot(interval,mean,data=avg.steps.per.int2,facets=day~.,geom="line")
+qplot(Interval,Number.of.steps,data=avg.steps.per.int2,facets=Day~.,geom="line")
 ```
 
 ![](PA1_template_files/figure-html/unnamed-chunk-16-1.png) 
